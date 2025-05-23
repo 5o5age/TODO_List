@@ -11,7 +11,7 @@ const app = express();
 // Serve static frontend files
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+// localhost:3000
 const PORT = 3000;
 
 const connectionString = "mongodb+srv://nilsterentjevs:Dammesiela245@cluster0.c7wustu.mongodb.net/TODOList?retryWrites=true&w=majority&appName=Cluster0"
@@ -21,7 +21,8 @@ app.use(express.json());
 
 const TodoSchema = new mongoose.Schema ({
     name: String,
-    completed: Boolean
+    completed: Boolean,
+    description: String
 });
 
 const Todo = mongoose.model("Todo", TodoSchema);
